@@ -1,0 +1,5 @@
+join character1 center
+character1: Hi! This is a dummy test
+leave character1
+join character2 center
+character2: It works! Yay

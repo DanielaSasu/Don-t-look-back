@@ -20,9 +20,19 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
-layout/style_directory={}
+directories/dch_directory={
+"character1": "res://Characters/character1.dch",
+"character2": "res://Characters/character2.dch"
+}
+directories/dtl_directory={
+"timeline1": "res://Timelines/timeline1.dtl"
+}
+layout/style_directory={
+"": "res://Styles/NewStyle.tres",
+"NewStyle": "res://Styles/NewStyle.tres"
+}
+layout/style_list=["res://Styles/NewStyle.tres"]
+layout/default_style="res://Styles/NewStyle.tres"
 
 [dotnet]
 
