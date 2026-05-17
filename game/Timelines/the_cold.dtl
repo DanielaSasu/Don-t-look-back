@@ -1,49 +1,49 @@
 [background arg="res://Assets/bedroom_cold.jpg" fade="2.0"]
 set {cold_meter} = 30
-Mă trezesc. Dormitorul e liniștit. [cite: 97]
-Pe scaunul din colț, jacheta lui. A stat acolo de când a plecat. [cite: 97, 98]
-The ceiling is the same ceiling. The jacket is the same jacket. I'm the one who has to change. [cite: 100]
+I wake up. The bedroom is quiet.
+On the chair in the corner, his jacket. It's been there since he left.
+The ceiling is the same ceiling. The jacket is the same jacket. I'm the one who has to change.
 
 - Take the jacket
-	Îmi pun jacheta pe mine. [cite: 105]
-	It's too big. It was always too big. [cite: 105]
-	# cold_meter stays — warmth borrowed, not earned [cite: 107]
+	I put it on.
+	It's too big. It was always too big.
+	# cold_meter stays — warmth borrowed, not earned
 - Leave it on the chair
-	Trec pe lângă ea, spre ușă.
-	I'll deal with it when I get back. Maybe. [cite: 108]
+	I walk past it, out the door.
+	I'll deal with it when I get back. Maybe.
 	set {cold_meter} -= 1
 
 [background arg="res://Assets/outside.jpg" fade="1.0"]
-Am ieșit. Frigul este real. Mă mișc prin spațiul pe care obișnuiam să-l împărțim. [cite: 111]
+I'm out. The cold is real. I move through the space we used to share.
 
-Ce abordez prima dată?
-- Planta moartă de pe verandă (Theirs)
-	Trebuia să fie „lucrul nostru”. Amândoi uitam de ea. A murit în liniște, la fel ca multe alte lucruri. [cite: 113]
-	*Flashback: Noi râzând de ea la început, promițând că vom fi mai atenți.* [cite: 114]
+What do I approach first?
+- The dead plant on the porch (Theirs)
+	It was supposed to be our thing. We both kept forgetting. It died quietly, like a lot of things did.
+	*Flashback: us laughing about it early on, promising to do better.*
 	- Water it, even now
-		I don't know if it'll come back. I'm watering it anyway. [cite: 115]
+		I don't know if it'll come back. I'm watering it anyway.
 		set {cold_meter} -= 1
 	- Look at it and keep walking
-		Some things don't come back. That's not my fault. [cite: 117]
+		Some things don't come back. That's not my fault.
 		set {cold_meter} -= 1
-- Banca (Their spot)
-	Obișnuiam să stăm aici și să nu vorbim. Credeam că liniștea înseamnă că suntem bine. Știu mai bine acum. [cite: 121]
+- The bench (Their spot)
+	We used to sit here and not talk. I thought silence meant we were okay. I know better now.
 	- Sit down alone
-		It's just a bench. It's mine now. [cite: 123]
+		It's just a bench. It's mine now.
 		set {cold_meter} -= 2
 	- Walk past it
-		Not yet. But I walked past it, which is something. [cite: 125]
+		Not yet. But I walked past it, which is something.
 		set {cold_meter} -= 1
 
-Găsesc ceva ce uitasem. Un obiect pe care mi l-am cumpărat pentru mine, înainte de el, care a ajuns îngropat. [cite: 128, 129]
+I find something I had forgotten. A small thing I bought for myself before him, that got buried.
 - Pick it up and take it inside
-	I forgot this was mine. [cite: 132]
+	I forgot this was mine.
 	set {cold_meter} -= 2
 	set {heat_meter} += 1
 - Leave it, but notice it
-	I see you. I'll come back for you. [cite: 134]
+	I see you. I'll come back for you.
 	set {cold_meter} -= 1
 	set {heat_meter} += 1
 
-I used to think healing was something that happened to you. Like weather. Like you just waited and eventually it broke. [cite: 139]
-I'm starting to think it's more like going outside in it. Every day. Until it's just weather. [cite: 140]
+I used to think healing was something that happened to you. Like weather. Like you just waited and eventually it broke.
+I'm starting to think it's more like going outside in it. Every day. Until it's just weather.

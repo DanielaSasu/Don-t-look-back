@@ -37,8 +37,7 @@ layout/style_directory={
 layout/style_list=["res://Styles/NewStyle.tres"]
 layout/default_style="res://Styles/NewStyle.tres"
 variables={
-"cold_meter": 100,
-"heat_meter": 0
+"cold_meter": 100
 }
 
 [dotnet]
