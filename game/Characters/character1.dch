@@ -12,14 +12,14 @@
 },
 &"default_portrait": "Neutral",
 &"description": "",
-&"display_name": "Tedi",
+&"display_name": "Daphne",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, -200),
 &"portraits": {
 "Neutral": {
 "export_overrides": {
-"image": "\"res://Assets/tedi.png\""
+"image": "\"res://Assets/DaphneFire.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

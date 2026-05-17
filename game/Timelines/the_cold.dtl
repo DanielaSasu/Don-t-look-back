@@ -1,0 +1,49 @@
+[background arg="res://Assets/bedroom_cold.jpg" fade="2.0"]
+set {cold_meter} = 30
+Mă trezesc. Dormitorul e liniștit. [cite: 97]
+Pe scaunul din colț, jacheta lui. A stat acolo de când a plecat. [cite: 97, 98]
+The ceiling is the same ceiling. The jacket is the same jacket. I'm the one who has to change. [cite: 100]
+
+- Take the jacket
+	Îmi pun jacheta pe mine. [cite: 105]
+	It's too big. It was always too big. [cite: 105]
+	# cold_meter stays — warmth borrowed, not earned [cite: 107]
+- Leave it on the chair
+	Trec pe lângă ea, spre ușă.
+	I'll deal with it when I get back. Maybe. [cite: 108]
+	set {cold_meter} -= 1
+
+[background arg="res://Assets/outside.jpg" fade="1.0"]
+Am ieșit. Frigul este real. Mă mișc prin spațiul pe care obișnuiam să-l împărțim. [cite: 111]
+
+Ce abordez prima dată?
+- Planta moartă de pe verandă (Theirs)
+	Trebuia să fie „lucrul nostru”. Amândoi uitam de ea. A murit în liniște, la fel ca multe alte lucruri. [cite: 113]
+	*Flashback: Noi râzând de ea la început, promițând că vom fi mai atenți.* [cite: 114]
+	- Water it, even now
+		I don't know if it'll come back. I'm watering it anyway. [cite: 115]
+		set {cold_meter} -= 1
+	- Look at it and keep walking
+		Some things don't come back. That's not my fault. [cite: 117]
+		set {cold_meter} -= 1
+- Banca (Their spot)
+	Obișnuiam să stăm aici și să nu vorbim. Credeam că liniștea înseamnă că suntem bine. Știu mai bine acum. [cite: 121]
+	- Sit down alone
+		It's just a bench. It's mine now. [cite: 123]
+		set {cold_meter} -= 2
+	- Walk past it
+		Not yet. But I walked past it, which is something. [cite: 125]
+		set {cold_meter} -= 1
+
+Găsesc ceva ce uitasem. Un obiect pe care mi l-am cumpărat pentru mine, înainte de el, care a ajuns îngropat. [cite: 128, 129]
+- Pick it up and take it inside
+	I forgot this was mine. [cite: 132]
+	set {cold_meter} -= 2
+	set {heat_meter} += 1
+- Leave it, but notice it
+	I see you. I'll come back for you. [cite: 134]
+	set {cold_meter} -= 1
+	set {heat_meter} += 1
+
+I used to think healing was something that happened to you. Like weather. Like you just waited and eventually it broke. [cite: 139]
+I'm starting to think it's more like going outside in it. Every day. Until it's just weather. [cite: 140]

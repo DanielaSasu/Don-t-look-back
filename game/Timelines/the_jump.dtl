@@ -1,0 +1,45 @@
+[background arg="res://Assets/DaphneSad.png" fade="0.0"]
+
+I used to hold you when you told me about your dreams. The ones where I died.
+Tragic. Sudden. Always so vivid.
+You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
+
+[background arg="res://Assets/blackscreen.png" fade="0.0"]
+set {cold_meter} = 100
+[background arg="res://Assets/bedroom_fire.png" fade="2.0"]
+set {cold_meter} = 10
+audio "res://Audio/fire.mp3"
+join character1 left
+set {cold_meter} = 80
+character1: Fire...
+character1: I have to wake you up!
+- Call his name
+	character1: Wake up! Please!
+- Shake him
+	character1: *Shaking him desperately* Come on, wake up!
+
+He won't wake up. He's already unconscious from the smoke.
+
+- Hold him
+- Lift him
+
+character1: *Coughing violently from the smoke*
+I look at him. I have no other choice. I have to save myself.
+character1: I'm sorry.
+leave character1
+
+- Go to the door
+	set {heat_meter} += 1
+	The staircase is completely engulfed by flames. It's practically unusable.
+	I have to use the window.
+	jump Window_Escape
+- Go to the window
+	jump Window_Escape
+
+label Window_Escape
+I look outside. It's the only way.
+set {heat_meter} -= 1
+
+# THE JUMP
+[background arg="res://Assets/blackscreen.png" fade="1.0"]
+# Mai târziu poți pune un "jump the_cold" aici pentru a trece la scena următoare.

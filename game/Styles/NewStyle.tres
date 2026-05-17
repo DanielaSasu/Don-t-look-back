@@ -36,7 +36,7 @@ overrides = {}
 script = ExtResource("2_s3on6")
 scene = ExtResource("6_u552m")
 overrides = {
-"box_color_custom": "Color(0.863509, 0.74036, 0.900391, 1)",
+"box_color_custom": "Color(1, 0, 0.498039, 1)",
 "box_color_use_global": "false"
 }
 

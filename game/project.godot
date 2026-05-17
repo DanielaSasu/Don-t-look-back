@@ -26,6 +26,8 @@ directories/dch_directory={
 "character2": "res://Characters/character2.dch"
 }
 directories/dtl_directory={
+"the_cold": "res://Timelines/the_cold.dtl",
+"the_jump": "res://Timelines/the_jump.dtl",
 "timeline1": "res://Timelines/timeline1.dtl"
 }
 layout/style_directory={
@@ -34,6 +36,10 @@ layout/style_directory={
 }
 layout/style_list=["res://Styles/NewStyle.tres"]
 layout/default_style="res://Styles/NewStyle.tres"
+variables={
+"cold_meter": 100,
+"heat_meter": 0
+}
 
 [dotnet]
 
