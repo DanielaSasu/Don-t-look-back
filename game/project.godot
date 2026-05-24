@@ -26,9 +26,7 @@ directories/dch_directory={
 "character2": "res://Characters/character2.dch"
 }
 directories/dtl_directory={
-"the_cold": "res://Timelines/the_cold.dtl",
-"the_jump": "res://Timelines/the_jump.dtl",
-"timeline1": "res://Timelines/timeline1.dtl"
+"the_jump": "res://Timelines/the_jump.dtl"
 }
 layout/style_directory={
 "": "res://Styles/NewStyle.tres",
@@ -37,7 +35,11 @@ layout/style_directory={
 layout/style_list=["res://Styles/NewStyle.tres"]
 layout/default_style="res://Styles/NewStyle.tres"
 variables={
-"cold_meter": 100
+"bike_checked": false,
+"cold_meter": 0,
+"investigated_objects": 0,
+"mailbox_checked": false,
+"plant_checked": false
 }
 
 [dotnet]

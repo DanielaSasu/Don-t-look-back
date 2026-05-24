@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkgi0oyvrtwee"]
+[gd_scene load_steps=8 format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Shader" uid="uid://bin7iippc7hq8" path="res://shader.gdshader" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bbvqrxlw8x0we" path="res://cold_meter_ui.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bnx7ibq72nh6n" path="res://dialog_manager.gd" id="4_lquwl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 shader = ExtResource("2_h2yge")
@@ -10,6 +11,12 @@ shader_parameter/cold_meter = 100.0
 shader_parameter/hot_color = Color(1, 0, 0.5, 1)
 shader_parameter/cold_color = Color(0, 0.2, 1, 1)
 shader_parameter/vignette_intensity = 0.6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.930655, 0.329776, 0.736547, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -35,3 +42,21 @@ offset_bottom = 75.0
 mouse_filter = 2
 value = 100.0
 script = ExtResource("4_1bvp3")
+
+[node name="TimerBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1074.0
+offset_top = 534.0
+offset_right = 1456.0
+offset_bottom = 583.0
+rotation = -1.56963
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
+show_percentage = false
+
+[node name="DialogManager" type="Node2D" parent="."]
+script = ExtResource("4_lquwl")
+
+[node name="ChoiceTimer" type="Timer" parent="DialogManager"]
+one_shot = true
