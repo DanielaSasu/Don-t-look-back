@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkgi0oyvrtwee"]
+[gd_scene load_steps=9 format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Shader" uid="uid://bin7iippc7hq8" path="res://shader.gdshader" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bxujenga5mdn5" path="res://cold_meter_panel.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bbvqrxlw8x0we" path="res://cold_meter_ui.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bnx7ibq72nh6n" path="res://dialog_manager.gd" id="4_lquwl"]
 
@@ -24,6 +25,78 @@ script = ExtResource("1_ig7tw")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
 
+[node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 305.0
+offset_bottom = 93.0
+grow_horizontal = 2
+script = ExtResource("2_lquwl")
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel"]
+layout_mode = 2
+
+[node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin"]
+layout_mode = 2
+
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+layout_mode = 2
+text = "Cold meter"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level: 0°"
+
+[node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "v"
+
+[node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+layout_mode = 2
+
+[node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level: 0°"
+
+[node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+0°"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+layout_mode = 2
+text = "Limit: 100°"
+
+[node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+unique_name_in_owner = true
+layout_mode = 2
+show_percentage = false
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 2
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
 material = SubResource("ShaderMaterial_lquwl")
@@ -35,10 +108,11 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ColdMeterUI" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 48.0
-offset_top = 34.0
-offset_right = 1124.0
-offset_bottom = 75.0
+visible = false
+offset_left = 43.0
+offset_top = 224.0
+offset_right = 1119.0
+offset_bottom = 265.0
 mouse_filter = 2
 value = 100.0
 script = ExtResource("4_1bvp3")

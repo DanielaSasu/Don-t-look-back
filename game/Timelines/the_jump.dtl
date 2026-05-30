@@ -1,4 +1,5 @@
 set {cold_meter} = 0
+
 [background arg="res://Assets/DaphneSad.png" fade="0.0"]
 
 I used to hold you when you told me about your dreams. The ones where I died.
