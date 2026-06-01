@@ -45,6 +45,7 @@ variables={
 "mailbox_checked": false,
 "plant_checked": false
 }
+glossary/default_case_sensitive=true
 
 [dotnet]
 

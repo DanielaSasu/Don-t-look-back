@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvai4oo7fs2ym"
+path="res://.godot/imported/ElevenLabs_2026-06-01T17_10_29_Sadie - Calm, Gritty & Expressive_pvc_sp81_s48_sb49_v3_1.wav-7dd24025bf7e01a2dea1eb9a2c7a351a.sample"
+
+[deps]
+
+source_file="res://Audio/prologue1.band/Media/ElevenLabs_2026-06-01T17_10_29_Sadie - Calm, Gritty & Expressive_pvc_sp81_s48_sb49_v3_1.wav"
+dest_files=["res://.godot/imported/ElevenLabs_2026-06-01T17_10_29_Sadie - Calm, Gritty & Expressive_pvc_sp81_s48_sb49_v3_1.wav-7dd24025bf7e01a2dea1eb9a2c7a351a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

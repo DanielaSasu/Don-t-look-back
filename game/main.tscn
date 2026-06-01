@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="StyleBox" uid="uid://c760e5ewy2ngr" path="res://Styles/box_texture.tres" id="2_7mycd"]
 [ext_resource type="Shader" uid="uid://bin7iippc7hq8" path="res://shader.gdshader" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bxujenga5mdn5" path="res://cold_meter_panel.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bbvqrxlw8x0we" path="res://cold_meter_ui.gd" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://cbs4dbts0mt5n" path="res://Styles/Array-Semibold.ttf" id="4_272bh"]
 [ext_resource type="Script" uid="uid://bnx7ibq72nh6n" path="res://dialog_manager.gd" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dfp7m5u7vcim" path="res://Assets/arrow_up.png" id="5_5vw27"]
+[ext_resource type="FontFile" uid="uid://bl4qj0moj3f8h" path="res://Styles/Array-Regular.ttf" id="5_kek77"]
+[ext_resource type="StyleBox" uid="uid://db5yabg0bfv2a" path="res://Styles/meter_bg.tres" id="7_efxa6"]
+[ext_resource type="StyleBox" uid="uid://bihrc603vaajp" path="res://Styles/meter_fill.tres" id="8_dg77c"]
+[ext_resource type="StyleBox" uid="uid://bojd5on4jfj0u" path="res://Styles/timer_bg.tres" id="11_ycdy4"]
+[ext_resource type="StyleBox" uid="uid://d127vb2rjvnga" path="res://Styles/timer_fill.tres" id="12_w48qg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 shader = ExtResource("2_h2yge")
@@ -13,12 +21,6 @@ shader_parameter/hot_color = Color(1, 0, 0.5, 1)
 shader_parameter/cold_color = Color(0, 0.2, 1, 1)
 shader_parameter/vignette_intensity = 0.6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
-bg_color = Color(0.930655, 0.329776, 0.736547, 1)
-
 [node name="Main" type="Node2D" unique_id=397425766]
 script = ExtResource("1_ig7tw")
 
@@ -26,13 +28,12 @@ script = ExtResource("1_ig7tw")
 layer = 10
 
 [node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1499819822]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -320.0
-offset_right = 305.0
-offset_bottom = 93.0
-grow_horizontal = 2
+custom_minimum_size = Vector2(16, 16)
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 641.0
+offset_bottom = 125.0
+theme_override_styles/panel = ExtResource("2_7mycd")
 script = ExtResource("2_lquwl")
 
 [node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel" unique_id=710890898]
@@ -40,12 +41,15 @@ layout_mode = 2
 
 [node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin" unique_id=1956182720]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=2101142893]
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1957354244]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_272bh")
+theme_override_font_sizes/font_size = 20
 text = "Cold meter"
 
 [node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=773269531]
@@ -55,28 +59,36 @@ size_flags_horizontal = 3
 [node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=727785788]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kek77")
 text = "Level: 0°"
 
 [node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1195097422]
 unique_name_in_owner = true
 layout_mode = 2
-text = "v"
+icon = ExtResource("5_5vw27")
 
 [node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=918363801]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=660676096]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=2122865072]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.8)
+theme_override_fonts/font = ExtResource("5_kek77")
+theme_override_font_sizes/font_size = 18
 text = "Level: 0°"
 
 [node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1633824071]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kek77")
+theme_override_font_sizes/font_size = 18
 text = "+0°"
 
 [node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1424717846]
@@ -85,16 +97,25 @@ size_flags_horizontal = 3
 
 [node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=811028117]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9372549, 0.9372549, 0.8)
+theme_override_fonts/font = ExtResource("5_kek77")
+theme_override_font_sizes/font_size = 18
 text = "Limit: 100°"
 
 [node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=305309766]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+theme_override_styles/background = ExtResource("7_efxa6")
+theme_override_styles/fill = ExtResource("8_dg77c")
 show_percentage = false
 
 [node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=1384133930]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9372549, 0.9372549, 0.8)
+theme_override_fonts/font = ExtResource("5_kek77")
 autowrap_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1834851608]
@@ -119,14 +140,14 @@ script = ExtResource("4_1bvp3")
 
 [node name="TimerBar" type="ProgressBar" parent="CanvasLayer" unique_id=1321182929]
 unique_name_in_owner = true
-offset_left = 1074.0
-offset_top = 534.0
-offset_right = 1456.0
-offset_bottom = 583.0
+offset_left = 1093.5043
+offset_top = 534.02277
+offset_right = 1482.0051
+offset_bottom = 563.5185
 rotation = -1.56963
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_1bvp3")
-theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/background = ExtResource("11_ycdy4")
+theme_override_styles/fill = ExtResource("12_w48qg")
 show_percentage = false
 
 [node name="DialogManager" type="Node2D" parent="." unique_id=1059114320]

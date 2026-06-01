@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cviwmn3wx15a3"
+path="res://.godot/imported/prologue1 - 3rd line.mp3-5d789a2a2e6a106e90cfa5e38b13c0d6.mp3str"
+
+[deps]
+
+source_file="res://Audio/prologue1 - 3rd line.mp3"
+dest_files=["res://.godot/imported/prologue1 - 3rd line.mp3-5d789a2a2e6a106e90cfa5e38b13c0d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

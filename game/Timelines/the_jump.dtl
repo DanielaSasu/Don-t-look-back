@@ -1,10 +1,14 @@
 set {cold_meter} = 0
 
 [background arg="res://Assets/DaphneSad.png" fade="0.0"]
+audio "res://Audio/prologue1 - 1st line.mp3"
 
 I used to hold you when you told me about your dreams. The ones where I died.
+audio "res://Audio/prologue1 - 2nd line.mp3"
 Tragic. Sudden. Always so vivid.
-You’d wake up in a panic, and I’d press your head to my chest and whisper: "I’m not going anywhere."
+audio "res://Audio/prologue1 - 3rd line.mp3"
+You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
+audio "res://Audio/prologue1 - 4th line.mp3"
 But your dreams became my reality. Only in mine... you're the one burning.
 
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
@@ -137,7 +141,7 @@ label intrusive_memory
 [background arg="res://Assets/outside_red_overlay.png" fade="0.5"]
 I approach the bench, but the air suddenly becomes suffocating.
 The ground beneath my feet is burning.
-I hear his sharp voice from the night he left: "You're impossible! You're suffocating me!"
+I hear his sharp voice from the night he left\: "You're impossible! You're suffocating me!"
 I shut my eyes tightly. The fire in the dream wasn't an accident. We were the fire. We burned each other until there was nothing left.
 [background arg="res://Assets/outside.jpg" fade="0.5"]
 I can't. Not yet. The cold outside is too sharp, and the memories burn too hot.

@@ -34,7 +34,18 @@ scene = ExtResource("6_u552m")
 overrides = {
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_color_use_global": "false",
-"box_panel": "\"res://Styles/new_style_box_texture.tres\""
+"box_margin_bottom": "16.0",
+"box_panel": "\"res://Styles/box_texture.tres\"",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(-16, -16)",
+"name_label_box_panel": "\"res://Styles/button_texture_default.tres\"",
+"name_label_custom_font_size": "18.0",
+"name_label_font": "\"res://Styles/Array-Semibold.ttf\"",
+"next_indicator_size": "Vector2(16, 16)",
+"next_indicator_texture": "\"res://Assets/indicator.png\"",
+"normal_font": "\"res://Styles/Array-Regular.ttf\"",
+"text_size": "16.0",
+"typing_sounds_end_sound": "\"res://addons/dialogic/Example Assets/sound-effects/typing1.wav\""
 }
 
 [sub_resource type="Resource" id="Resource_qcme0"]
@@ -44,6 +55,14 @@ scene = ExtResource("7_x7hw5")
 [sub_resource type="Resource" id="Resource_oxvsg"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("8_w1ju3")
+overrides = {
+"boxes_stylebox_focused": "\"\"",
+"boxes_stylebox_hovered": "\"res://Styles/button_texture_hover.tres\"",
+"boxes_stylebox_normal": "\"res://Styles/button_texture_default.tres\"",
+"boxes_stylebox_pressed": "\"res://Styles/button_texture_pressed.tres\"",
+"font_custom": "\"res://Styles/Array-Semibold.ttf\"",
+"font_size_custom": "18.0"
+}
 
 [sub_resource type="Resource" id="Resource_s4u0y"]
 script = ExtResource("2_s3on6")
