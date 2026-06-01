@@ -97,9 +97,9 @@ func _update_ui_state() -> void:
 	if is_expanded:
 		expanded_content.show()
 		collapsed_level.hide()
-		toggle_button.text = "^"
+		toggle_button.icon = load("res://Assets/arrow_up.png")
 	else:
 		expanded_content.hide()
 		collapsed_level.show()
-		toggle_button.text = "v"
+		toggle_button.icon = load("res://Assets/arrow_down.png")
 		self.size.y = 0
