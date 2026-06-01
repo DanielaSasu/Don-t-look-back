@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkgi0oyvrtwee"]
+[gd_scene format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Shader" uid="uid://bin7iippc7hq8" path="res://shader.gdshader" id="2_h2yge"]
@@ -19,13 +19,13 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
 bg_color = Color(0.930655, 0.329776, 0.736547, 1)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=397425766]
 script = ExtResource("1_ig7tw")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1563175685]
 layer = 10
 
-[node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer"]
+[node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1499819822]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -35,69 +35,69 @@ offset_bottom = 93.0
 grow_horizontal = 2
 script = ExtResource("2_lquwl")
 
-[node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel"]
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel" unique_id=710890898]
 layout_mode = 2
 
-[node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin"]
+[node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin" unique_id=1956182720]
 layout_mode = 2
 
-[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=2101142893]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1957354244]
 layout_mode = 2
 text = "Cold meter"
 
-[node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=773269531]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=727785788]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level: 0°"
 
-[node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1195097422]
 unique_name_in_owner = true
 layout_mode = 2
 text = "v"
 
-[node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+[node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=918363801]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=660676096]
 layout_mode = 2
 
-[node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=2122865072]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level: 0°"
 
-[node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1633824071]
 unique_name_in_owner = true
 layout_mode = 2
 text = "+0°"
 
-[node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1424717846]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=811028117]
 layout_mode = 2
 text = "Limit: 100°"
 
-[node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=305309766]
 unique_name_in_owner = true
 layout_mode = 2
 show_percentage = false
 
-[node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=1384133930]
 unique_name_in_owner = true
 layout_mode = 2
 autowrap_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1834851608]
 visible = false
 material = SubResource("ShaderMaterial_lquwl")
 anchors_preset = 15
@@ -107,7 +107,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColdMeterUI" type="ProgressBar" parent="CanvasLayer"]
+[node name="ColdMeterUI" type="ProgressBar" parent="CanvasLayer" unique_id=1693110202]
 visible = false
 offset_left = 43.0
 offset_top = 224.0
@@ -117,7 +117,7 @@ mouse_filter = 2
 value = 100.0
 script = ExtResource("4_1bvp3")
 
-[node name="TimerBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="TimerBar" type="ProgressBar" parent="CanvasLayer" unique_id=1321182929]
 unique_name_in_owner = true
 offset_left = 1074.0
 offset_top = 534.0
@@ -129,8 +129,8 @@ theme_override_styles/background = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
 show_percentage = false
 
-[node name="DialogManager" type="Node2D" parent="."]
+[node name="DialogManager" type="Node2D" parent="." unique_id=1059114320]
 script = ExtResource("4_lquwl")
 
-[node name="ChoiceTimer" type="Timer" parent="DialogManager"]
+[node name="ChoiceTimer" type="Timer" parent="DialogManager" unique_id=1248198126]
 one_shot = true

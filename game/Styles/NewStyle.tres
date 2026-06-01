@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=21 format=3 uid="uid://ck7kucxoehgm8"]
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://ck7kucxoehgm8"]
 
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_hmtnl"]
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_s3on6"]
@@ -15,50 +15,43 @@
 [sub_resource type="Resource" id="Resource_7m4py"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("1_hmtnl")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_nqqrn"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("3_cehpw")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_m1dgs"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("4_ka6gg")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_0jf5h"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("5_doip5")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_gqc8w"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("6_u552m")
 overrides = {
-"box_color_custom": "Color(1, 0, 0.498039, 1)",
-"box_color_use_global": "false"
+"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_use_global": "false",
+"box_panel": "\"res://Styles/new_style_box_texture.tres\""
 }
 
 [sub_resource type="Resource" id="Resource_qcme0"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("7_x7hw5")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_oxvsg"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("8_w1ju3")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_s4u0y"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("9_r4k5t")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_kus2j"]
 script = ExtResource("2_s3on6")
 scene = ExtResource("10_tcc2u")
-overrides = {}
 
 [resource]
 script = ExtResource("11_dvpro")
@@ -75,6 +68,4 @@ layer_info = {
 "16": SubResource("Resource_s4u0y"),
 "17": SubResource("Resource_kus2j")
 }
-base_overrides = {}
-layers = Array[ExtResource("2_s3on6")]([])
 metadata/_latest_layer = "13"
