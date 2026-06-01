@@ -140,10 +140,17 @@ script = ExtResource("4_1bvp3")
 
 [node name="TimerBar" type="ProgressBar" parent="CanvasLayer" unique_id=1321182929]
 unique_name_in_owner = true
-offset_left = 1093.5043
-offset_top = 534.02277
-offset_right = 1482.0051
-offset_bottom = 563.5185
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.999878
+offset_top = -338.0
+offset_right = 327.50098
+offset_bottom = -308.50415
+grow_horizontal = 0
+grow_vertical = 0
 rotation = -1.56963
 mouse_filter = 2
 theme_override_styles/background = ExtResource("11_ycdy4")

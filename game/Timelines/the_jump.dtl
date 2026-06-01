@@ -1,14 +1,14 @@
 set {cold_meter} = 0
 
 [background arg="res://Assets/DaphneSad.png" fade="0.0"]
-audio "res://Audio/prologue1 - 1st line.mp3"
+[voice path="res://Audio/prologue1 - 1st line.mp3" volume="0.0"]
 
 I used to hold you when you told me about your dreams. The ones where I died.
-audio "res://Audio/prologue1 - 2nd line.mp3"
+[voice path="res://Audio/prologue1 - 2nd line.mp3" volume="0.0"]
 Tragic. Sudden. Always so vivid.
-audio "res://Audio/prologue1 - 3rd line.mp3"
+[voice path="res://Audio/prologue1 - 3rd line.mp3" volume="0.0"]
 You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
-audio "res://Audio/prologue1 - 4th line.mp3"
+[voice path="res://Audio/prologue1 - 4th line.mp3" volume="0.0"]
 But your dreams became my reality. Only in mine... you're the one burning.
 
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
