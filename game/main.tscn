@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkgi0oyvrtwee"]
+[gd_scene load_steps=14 format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="StyleBox" uid="uid://c760e5ewy2ngr" path="res://Styles/box_texture.tres" id="2_7mycd"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bxujenga5mdn5" path="res://cold_meter_panel.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bbvqrxlw8x0we" path="res://cold_meter_ui.gd" id="4_1bvp3"]
 [ext_resource type="FontFile" uid="uid://cbs4dbts0mt5n" path="res://Styles/Array-Semibold.ttf" id="4_272bh"]
-[ext_resource type="Script" uid="uid://bnx7ibq72nh6n" path="res://dialog_manager.gd" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dfp7m5u7vcim" path="res://Assets/arrow_up.png" id="5_5vw27"]
 [ext_resource type="FontFile" uid="uid://bl4qj0moj3f8h" path="res://Styles/Array-Regular.ttf" id="5_kek77"]
 [ext_resource type="StyleBox" uid="uid://db5yabg0bfv2a" path="res://Styles/meter_bg.tres" id="7_efxa6"]
@@ -158,7 +157,6 @@ theme_override_styles/fill = ExtResource("12_w48qg")
 show_percentage = false
 
 [node name="DialogManager" type="Node2D" parent="."]
-script = ExtResource("4_lquwl")
 
 [node name="ChoiceTimer" type="Timer" parent="DialogManager"]
 one_shot = true

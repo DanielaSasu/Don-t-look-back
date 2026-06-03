@@ -14,31 +14,28 @@ set {bike_checked} = false
 [background arg="res://Assets/DaphneSad.png" fade="0.0"]
 
 [voice path="res://Audio/prologue1 - 1st line.mp3" volume="0.0"]
-
-I used to hold you when you told me about your dreams. The ones where I died.
+character1: I used to hold you when you told me about your dreams. The ones where I died.
 
 [voice path="res://Audio/prologue1 - 2nd line.mp3" volume="0.0"]
-
-Tragic. Sudden. Always so vivid.
+character1: Tragic. Sudden. Always so vivid.
 
 [voice path="res://Audio/prologue1 - 3rd line.mp3" volume="0.0"]
-
-You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
+character1: You’d wake up in a panic, and I’d press your head to my chest and whisper: "I’m not going anywhere."
 
 [voice path="res://Audio/prologue1 - 4th line.mp3" volume="0.0"]
-
-But your dreams became my reality. Only in mine... you're the one burning.
+character1: But your dreams became my reality. Only in mine... you're the one burning.
 
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
 [background arg="res://Assets/bedroom_fire.png" fade="2.0"]
 audio "res://Audio/fire.mp3"
+
 join character1 left
 
 character1: Fire...
 character1: I have to wake you up! The air is already impossible to breathe.
 
 # TIMER 1: The Fire (5 seconds)
-[signal arg="start_timer_5s"]
+[signal arg="start_timer_fire"]
 
 - Call his name
     [signal arg="stop_timer"]
@@ -48,28 +45,34 @@ character1: I have to wake you up! The air is already impossible to breathe.
 - Shake him hard
     [signal arg="stop_timer"]
     set {cold_meter} += 5
-    character1: *Shaking him desperately* Come on, move! We have to get out!
+    I shake him desperately.
+    character1: Come on, move! We have to get out!
     jump fire_continuation
 
 label timeout_fire
 set {cold_meter} -= 10
-character1: *Frozen in fear, coughing* I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
+I freeze in fear, coughing as the smoke fills the room.
+character1: I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
 
 label fire_continuation
-He won't wake up. Maybe he stopped hearing me a long time ago.
+He won't wake up. Maybe he never wanted to.
 The smoke burns my lungs. The ceiling is starting to cave in.
 
 - Try to lift him
     set {cold_meter} -= 10
-    character1: *Coughing violently* No... I can't carry you. You're too heavy. You were always too heavy to carry.
+    I try to pull him out of bed, but a violent cough stops me.
+    character1: No... I can't carry you. You're too heavy. You were always too heavy to carry.
 - Save yourself
     set {cold_meter} += 10
-    character1: *Coughing* You've dragged me down enough.
+    I step back, coughing.
+    character1: You've dragged me down enough.
     I look at him one last time.
     character1: I'm sorry.
 
 The ceiling collapses right next to the bed. A wall of flames cuts us apart.
+
 leave character1
+
 The fire has swallowed the door. The stairs are a death trap.
 The only way out is the window. The only way is to jump.
 
@@ -79,12 +82,14 @@ The only way out is the window. The only way is to jump.
 [background arg="res://Assets/blackscreen.png" fade="1.0"]
 [background arg="res://Assets/bedroom_cold.jpg" fade="2.0"]
 
+join character1 left
+
 I wake up gasping. The bedroom is freezing.
 His jacket is on the chair in the corner. It's been there since the night he slammed the door.
 The ceiling is the same. The jacket is the same. I'm the one who has to change.
 
 # TIMER 2: The Jacket (5 seconds)
-[signal arg="start_timer_5s"]
+[signal arg="start_timer_jacket"]
 
 - Put the jacket on
     [signal arg="stop_timer"]
@@ -92,9 +97,6 @@ The ceiling is the same. The jacket is the same. I'm the one who has to change.
 - Leave it on the chair
     [signal arg="stop_timer"]
     jump choice_jacket_leave
-
-label timeout_jacket
-[signal arg="force_random_jacket"]
 
 label choice_jacket_on
 set {cold_meter} -= 5
@@ -109,7 +111,13 @@ But I walked past it, and that's all that matters right now.
 jump outside_transition
 
 label outside_transition
+
+leave character1
+
 [background arg="res://Assets/outside.jpg" fade="1.0"]
+
+join character1 left
+
 I'm out. The cold is real, but at least the air is clean. It doesn't smell like ash.
 
 label outside_hub
@@ -158,11 +166,18 @@ What should I look at?
 # THE DISCOMFORT & BRAVERY
 # ==========================================
 label bravery_chapter
+
+leave character1
+
 [background arg="res://Assets/street_cold.jpg" fade="1.0"]
+
+join character1 left
+
 Everything hurts. I think that's progress. The numbness is cracking. I'm tired, cold, and for the first time since the jump, fully present.
 
 I used to think discomfort meant something was wrong. Now I think it might mean something is still alive.
-"I don't know if this is healing. But I'm doing things again. That has to count for something."
+character1: I don't know if this is healing. But I'm doing things again. That has to count for something.
+
 The world feels wider here. I move further from the house than I have before.
 
 I reach a place I used to go alone.
@@ -176,7 +191,7 @@ I reach a place I used to go alone.
 Suddenly, the sun breaks through the clouds. A small, unexpected warmth hits my face.
 
 # TIMER 3: Good Moment (5 seconds)
-[signal arg="start_timer_5s"]
+[signal arg="start_timer_moment"]
 
 - Let yourself feel it
     [signal arg="stop_timer"]
@@ -184,9 +199,6 @@ Suddenly, the sun breaks through the clouds. A small, unexpected warmth hits my 
 - Shut it down
     [signal arg="stop_timer"]
     jump choice_moment_shut
-
-label timeout_moment
-[signal arg="force_random_moment"]
 
 label choice_moment_feel
 set {cold_meter} += 5
@@ -202,7 +214,7 @@ jump void_chapter
 # THE VOID
 # ==========================================
 label void_chapter
-"I keep waiting for the moment it stops hurting. I think that might not be how it works. I think you just get better at carrying it."
+character1: I keep waiting for the moment it stops hurting. I think that might not be how it works. I think you just get better at carrying it.
 I thought getting better would feel like something. Mostly it just feels like nothing. I'm trying to decide if that's okay.
 
 My phone vibrates. An old message from him saved in the archive.
@@ -246,15 +258,18 @@ Something inside me keeps trying to turn around.
     I don't need to take it with me. I know what I know.
 
 I reach the door. I turn the handle.
+
+leave character1
+
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
 
 audio "res://Audio/TheReturn_ambient.mp3"
 (Silence. Then, a low voice.)
-I never told you... I had them too. The dreams. 
-You believed me, but I never told you. I just carried the silence around all day, like a bruise nobody could see.
-Now I wake up every morning and the silence is still there. Not because you died. But because you left.
-And I don't know how to explain the difference between being gone and being absent.
-In the morning, I am always alone.
+character1: I never told you... I had them too. The dreams. 
+character1: You believed me, but I never told you. I just carried the silence around all day, like a bruise nobody could see.
+character1: Now I wake up every morning and the silence is still there. Not because you died. But because you left.
+character1: And I don't know how to explain the difference between being gone and being absent.
+character1: In the morning, I am always alone.
 
 jump evaluate_endings
 
@@ -263,8 +278,6 @@ jump evaluate_endings
 # ==========================================
 label evaluate_endings
 
-# Marjele sunt acum echilibrate. Scorul extrem negativ înseamnă atașament total, 
-# scorul extrem pozitiv înseamnă curaj. Mijlocul reprezintă tranziția.
 if {cold_meter} <= -20:
     jump ending_1_intrusive_memory
 if {cold_meter} >= 20:
@@ -275,26 +288,42 @@ else:
 # --- ENDING 1 ---
 label ending_1_intrusive_memory
 [background arg="res://Assets/outside_red_overlay.png" fade="1.0"]
+
+join character1 left
+
 She goes back inside. The cycle continues.
 The air suddenly becomes suffocating. The ground beneath my feet is burning.
-I hear his sharp voice\: "You're impossible! You're suffocating me!"
+I hear his sharp voice:
+ex: You're impossible! You're suffocating me!
 The fire in the dream wasn't an accident. We were the fire. We burned each other until there was nothing left.
-"You've been here before."
+character1: You've been here before.
+
+leave character1
 [end_timeline]
 
 # --- ENDING 2 ---
 label ending_2_acceptance
 [background arg="res://Assets/outside_bright.jpg" fade="2.0"]
+
+join character1 left
+
 I look down near the bench in the yard. I notice something shining in the grass.
-I pick it up. It's my old watch.
-The watch is broken.
-Time kept moving anyway.
+I pick it up. It's my old watch. Scratched. Stopped at a time I don't recognise.
+But it's mine.
+The cold is still here, but it doesn't freeze me anymore.
+
+leave character1
 [end_timeline]
 
 # --- ENDING 3 ---
 label ending_3_the_walk
 [background arg="res://Assets/street_sunset.jpg" fade="2.0"]
+
+join character1 left
+
 She doesn't go back into the house. She keeps walking.
 The street stretches out in front of me.
-"I don't know where I'm going. That's the first time that's felt okay."
+character1: I don't know where I'm going. That's the first time that's felt okay.
+
+leave character1
 [end_timeline]
