@@ -1,159 +1,300 @@
+# ==========================================
+# INITIALIZATION
+# ==========================================
 set {cold_meter} = 0
+set {investigated_objects} = 0
+set {plant_checked} = false
+set {mailbox_checked} = false
+set {bike_checked} = false
+
+# ==========================================
+# PROLOGUE & THE JUMP
+# ==========================================
 
 [background arg="res://Assets/DaphneSad.png" fade="0.0"]
+
 [voice path="res://Audio/prologue1 - 1st line.mp3" volume="0.0"]
 
 I used to hold you when you told me about your dreams. The ones where I died.
+
 [voice path="res://Audio/prologue1 - 2nd line.mp3" volume="0.0"]
+
 Tragic. Sudden. Always so vivid.
+
 [voice path="res://Audio/prologue1 - 3rd line.mp3" volume="0.0"]
+
 You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
+
 [voice path="res://Audio/prologue1 - 4th line.mp3" volume="0.0"]
+
 But your dreams became my reality. Only in mine... you're the one burning.
 
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
 [background arg="res://Assets/bedroom_fire.png" fade="2.0"]
-
 audio "res://Audio/fire.mp3"
 join character1 left
 
 character1: Fire...
 character1: I have to wake you up! The air is already impossible to breathe.
 
-[signal arg="start_fire_timer"]
+# TIMER 1: The Fire (5 seconds)
+[signal arg="start_timer_5s"]
 
 - Call his name
-    # Tells the Godot engine to stop the timer because the player clicked
     [signal arg="stop_timer"]
     set {cold_meter} -= 5
     character1: Wake up! Please, don't leave me here!
-    jump continuation_scene_1
+    jump fire_continuation
 - Shake him hard
     [signal arg="stop_timer"]
     set {cold_meter} += 5
     character1: *Shaking him desperately* Come on, move! We have to get out!
-    jump continuation_scene_1
+    jump fire_continuation
 
-label panic_paralysis
-# Godot forcefully jumps the player here if the 5 seconds run out
-set {cold_meter} -= 15
+label timeout_fire
+set {cold_meter} -= 10
 character1: *Frozen in fear, coughing* I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
 
-label continuation_scene_1
-He won't wake up. Maybe he never wanted to.
+label fire_continuation
+He won't wake up. Maybe he stopped hearing me a long time ago.
 The smoke burns my lungs. The ceiling is starting to cave in.
 
-- Try to lift him (You can't leave him)
+- Try to lift him
     set {cold_meter} -= 10
     character1: *Coughing violently* No... I can't carry you. You're too heavy. You were always too heavy to carry.
-- Save yourself (Leave him behind)
-    set {cold_meter} += 15
+- Save yourself
+    set {cold_meter} += 10
     character1: *Coughing* You've dragged me down enough.
     I look at him one last time.
     character1: I'm sorry.
 
 The ceiling collapses right next to the bed. A wall of flames cuts us apart.
 leave character1
-
 The fire has swallowed the door. The stairs are a death trap.
 The only way out is the window. The only way is to jump.
 
+# ==========================================
+# THE COLD
+# ==========================================
 [background arg="res://Assets/blackscreen.png" fade="1.0"]
-
-label the_cold_reality
 [background arg="res://Assets/bedroom_cold.jpg" fade="2.0"]
 
 I wake up gasping. The bedroom is freezing.
 His jacket is on the chair in the corner. It's been there since the night he slammed the door.
 The ceiling is the same. The jacket is the same. I'm the one who has to change.
 
-- Put the jacket on
-    set {cold_meter} -= 10
-    I put it on. It's too big. It was always too big, like a shadow covering me completely.
-    *The smell of cigarette smoke is still ingrained in the fabric. It makes me cough.*
-- Leave it on the chair
-    set {cold_meter} += 10
-    I walk past it toward the door. I'll throw it away later. Or tomorrow.
-    But I walked past it, and that's all that matters right now.
+# TIMER 2: The Jacket (5 seconds)
+[signal arg="start_timer_5s"]
 
+- Put the jacket on
+    [signal arg="stop_timer"]
+    jump choice_jacket_on
+- Leave it on the chair
+    [signal arg="stop_timer"]
+    jump choice_jacket_leave
+
+label timeout_jacket
+[signal arg="force_random_jacket"]
+
+label choice_jacket_on
+set {cold_meter} -= 5
+I put it on. It's too big. Always too big.
+The smell of cigarette smoke is still in the fabric. It makes me cough.
+jump outside_transition
+
+label choice_jacket_leave
+set {cold_meter} += 5
+I walk past it toward the door. I'll throw it away later. Or tomorrow.
+But I walked past it, and that's all that matters right now.
+jump outside_transition
+
+label outside_transition
 [background arg="res://Assets/outside.jpg" fade="1.0"]
 I'm out. The cold is real, but at least the air is clean. It doesn't smell like ash.
 
-# Resetting variables for the hub
-set {investigated_objects} = 0
-set {plant_checked} = false
-set {mailbox_checked} = false
-set {bike_checked} = false
-
 label outside_hub
-
 if {investigated_objects} >= 2:
-    jump bench_interaction
+    jump bravery_chapter
 
-What should I look at first?
+What should I look at?
 
-- The Dead Plant on the porch | [if {plant_checked} == false]
+- The Dead Plant | [if {plant_checked} == false]
     set {plant_checked} = true
     set {investigated_objects} += 1
-    He bought it saying we would "take care of something together." Then he forgot about it in the first week. I kept it alive for months, until I got tired.
+    He bought it saying we'd take care of something together. I kept it alive for months, until I got tired.
     - Water the dry soil
-        set {cold_meter} -= 10
-        I don't know if it will come back to life. But I pour water over the dry roots. It's a waste, but I can't stop.
+        set {cold_meter} -= 5
+        I don't know if it will come back. I pour water over the dry roots anyway.
     - Throw the pot away
-        set {cold_meter} += 10
-        It's not my fault that some things aren't meant to survive. I push it with my foot. It shatters.
+        set {cold_meter} += 5
+        It's not my fault some things aren't meant to survive. I push it. It shatters.
     jump outside_hub
 
 - The Mailbox | [if {mailbox_checked} == false]
     set {mailbox_checked} = true
     set {investigated_objects} += 1
-    I open it. Inside is an unsent letter I wrote to him weeks before the breakup. It's full of apologies for things that weren't my fault.
+    An unsent letter I wrote weeks before the breakup. Full of apologies for things that weren't my fault.
     - Tear it to pieces
-        set {cold_meter} += 15
-        I don't owe him any more apologies. The paper flutters away into the winter wind.
-    - Put it back in the mailbox
+        set {cold_meter} += 5
+        I don't owe him any more apologies. The paper flutters into the winter wind.
+    - Put it back
         set {cold_meter} -= 5
-        I close the lid. Maybe I still want him to read it. Maybe I still want him to forgive me.
+        Maybe I still want him to read it. Maybe I still want him to forgive me.
     jump outside_hub
 
 - The Old Bicycle | [if {bike_checked} == false]
     set {bike_checked} = true
     set {investigated_objects} += 1
-    His bicycle is still chained to the railing. The tire is flat. It reminds me of the summers we spent riding down to the river, before the silence took over.
-    - Kick the tire in anger
+    Still chained to the railing. Tire flat. It reminds me of the summers before the silence took over.
+    - Kick the tire
         set {cold_meter} += 5
         It's just junk now. Rusting in my space.
-    - Touch the cold metal handle
-        set {cold_meter} -= 10
+    - Touch the handle
+        set {cold_meter} -= 5
         The metal freezes my fingertips. I remember how his hands felt when they started growing cold toward me.
     jump outside_hub
 
-label bench_interaction
-In the yard is the bench. Our spot.
-We used to sit here and not talk at all. I thought silence meant we were okay. Now I know the silence was just the sound of the space between us, growing wider.
+# ==========================================
+# THE DISCOMFORT & BRAVERY
+# ==========================================
+label bravery_chapter
+[background arg="res://Assets/street_cold.jpg" fade="1.0"]
+Everything hurts. I think that's progress. The numbness is cracking. I'm tired, cold, and for the first time since the jump, fully present.
 
-if {cold_meter} < -10:
-    jump intrusive_memory
-else:
-    jump acceptance_path
+I used to think discomfort meant something was wrong. Now I think it might mean something is still alive.
+"I don't know if this is healing. But I'm doing things again. That has to count for something."
+The world feels wider here. I move further from the house than I have before.
 
-label intrusive_memory
-[background arg="res://Assets/outside_red_overlay.png" fade="0.5"]
-I approach the bench, but the air suddenly becomes suffocating.
-The ground beneath my feet is burning.
-I hear his sharp voice from the night he left\: "You're impossible! You're suffocating me!"
-I shut my eyes tightly. The fire in the dream wasn't an accident. We were the fire. We burned each other until there was nothing left.
-[background arg="res://Assets/outside.jpg" fade="0.5"]
-I can't. Not yet. The cold outside is too sharp, and the memories burn too hot.
-I go back inside. I get back into bed. I'll try again tomorrow.
+I reach a place I used to go alone.
+- Go inside
+    set {cold_meter} += 5
+    It's still here. So am I.
+- Walk past
+    set {cold_meter} -= 5
+    I notice it, but I keep walking. I'm not ready yet.
+
+Suddenly, the sun breaks through the clouds. A small, unexpected warmth hits my face.
+
+# TIMER 3: Good Moment (5 seconds)
+[signal arg="start_timer_5s"]
+
+- Let yourself feel it
+    [signal arg="stop_timer"]
+    jump choice_moment_feel
+- Shut it down
+    [signal arg="stop_timer"]
+    jump choice_moment_shut
+
+label timeout_moment
+[signal arg="force_random_moment"]
+
+label choice_moment_feel
+set {cold_meter} += 5
+I let it land. Just for a second. I don't think about him.
+jump void_chapter
+
+label choice_moment_shut
+set {cold_meter} -= 5
+I don't deserve a good moment yet. Not while things are still like this.
+jump void_chapter
+
+# ==========================================
+# THE VOID
+# ==========================================
+label void_chapter
+"I keep waiting for the moment it stops hurting. I think that might not be how it works. I think you just get better at carrying it."
+I thought getting better would feel like something. Mostly it just feels like nothing. I'm trying to decide if that's okay.
+
+My phone vibrates. An old message from him saved in the archive.
+- Delete it
+    set {cold_meter} += 10
+    I don't read it first. If I read it first I won't delete it.
+- Read it, put it down
+    set {cold_meter} -= 5
+    It says something kind. That's almost worse than if it said something cruel.
+- Read it and reply
+    set {cold_meter} -= 15
+    I type something. I don't send it. I type it again. I still don't send it.
+
+label void_house_choice
+I find myself looking down the street that leads back to the house.
+
+- Keep walking forward
+    set {cold_meter} += 10
+    Not today. I have somewhere to be. I don't. But I pretend I do, and somewhere along the way it becomes true.
+    jump evaluate_endings
+- Turn back to the house
+    set {cold_meter} -= 15
+    I don't know why I'm going back. I think I just need to see it.
+    jump the_return
+
+# ==========================================
+# THE RETURN
+# ==========================================
+label the_return
+After the void, I go back. The gate is stiff. The path is overgrown. 
+Something inside me keeps trying to turn around.
+
+- Stop at the gate
+    set {cold_meter} += 5
+    I almost turn back. I don't.
+- Read the last relic
+    set {cold_meter} -= 5
+    One last thing. I hold it. I keep walking.
+- Leave it where it is
+    set {cold_meter} += 5
+    I don't need to take it with me. I know what I know.
+
+I reach the door. I turn the handle.
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
+
+audio "res://Audio/TheReturn_ambient.mp3"
+(Silence. Then, a low voice.)
+I never told you... I had them too. The dreams. 
+You believed me, but I never told you. I just carried the silence around all day, like a bruise nobody could see.
+Now I wake up every morning and the silence is still there. Not because you died. But because you left.
+And I don't know how to explain the difference between being gone and being absent.
+In the morning, I am always alone.
+
+jump evaluate_endings
+
+# ==========================================
+# ENDINGS EVALUATION
+# ==========================================
+label evaluate_endings
+
+# Marjele sunt acum echilibrate. Scorul extrem negativ înseamnă atașament total, 
+# scorul extrem pozitiv înseamnă curaj. Mijlocul reprezintă tranziția.
+if {cold_meter} <= -20:
+    jump ending_1_intrusive_memory
+if {cold_meter} >= 20:
+    jump ending_2_acceptance
+else:
+    jump ending_3_the_walk
+
+# --- ENDING 1 ---
+label ending_1_intrusive_memory
+[background arg="res://Assets/outside_red_overlay.png" fade="1.0"]
+She goes back inside. The cycle continues.
+The air suddenly becomes suffocating. The ground beneath my feet is burning.
+I hear his sharp voice\: "You're impossible! You're suffocating me!"
+The fire in the dream wasn't an accident. We were the fire. We burned each other until there was nothing left.
+"You've been here before."
 [end_timeline]
 
-label acceptance_path
-I sit on the bench. It's cold. It's just a piece of wood in my yard.
-As I look at the ground, I notice something shining in the grass, hidden under the dead leaves.
-I pick it up. It's my old watch. The one I lost during my first summer with him.
+# --- ENDING 2 ---
+label ending_2_acceptance
+[background arg="res://Assets/outside_bright.jpg" fade="2.0"]
+I look down near the bench in the yard. I notice something shining in the grass.
+I pick it up. It's my old watch.
+The watch is broken.
+Time kept moving anyway.
+[end_timeline]
 
-It's scratched and stopped at a time I don't recognize. But it's mine.
-[background arg="res://Assets/blackscreen.png" fade="2.0"]
+# --- ENDING 3 ---
+label ending_3_the_walk
+[background arg="res://Assets/street_sunset.jpg" fade="2.0"]
+She doesn't go back into the house. She keeps walking.
+The street stretches out in front of me.
+"I don't know where I'm going. That's the first time that's felt okay."
 [end_timeline]
