@@ -18,7 +18,7 @@ You’d wake up in a panic, and I’d press your head to my chest and whisper\: 
 But your dreams became my reality. Only in mine... you're the one burning.
 
 [background arg="res://Assets/blackscreen.png" fade="2.0"]
-[background arg="res://Assets/bedroom_fire.png" fade="2.0"]
+[background arg="res://Assets/bedroom.png" fade="2.0"]
 
 audio "res://Audio/fire.mp3"
 join character1 (Sad) left
@@ -37,13 +37,13 @@ character1 (covering mouth): I have to wake you up! The air is already impossibl
 - Shake him hard
     [signal arg="stop_timer"]
     set {cold_meter} += 5
-    character1 (desperate): *Shaking him desperately* Come on, move! We have to get out!
+    character1 (desperate): Shaking him desperately Come on, move! We have to get out!
     jump continuation_scene_1
 
 label panic_paralysis
 # Godot forcefully jumps the player here if the 5 seconds run out
 set {cold_meter} -= 15
-character1 (coughing): *Frozen in fear, coughing* I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
+character1 (coughing): Frozen in fear, coughing I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
 
 label continuation_scene_1
 He won't wake up. Maybe he never wanted to.
@@ -51,10 +51,10 @@ The smoke burns my lungs. The ceiling is starting to cave in.
 
 - Try to lift him (You can't leave him)
     set {cold_meter} -= 10
-    character1 (looking at ceiling): *Coughing violently* No... I can't carry you. You're too heavy. You were always too heavy to carry.
+    character1 (looking at ceiling): Coughing violently No... I can't carry you. You're too heavy. You were always too heavy to carry.
 - Save yourself (Leave him behind)
     set {cold_meter} += 15
-    character1 (desperate): *Coughing* You've dragged me down enough.
+    character1 (desperate): Coughing You've dragged me down enough.
     I look at him one last time.
     character1 (Sad): I'm sorry.
 
@@ -63,106 +63,6 @@ leave character1
 
 The fire has swallowed the door. The stairs are a death trap.
 The only way out is the window. The only way is to jump.
-
-[background arg="res://Assets/blackscreen.png" fade="1.0"]
-
-label the_cold_reality
-[background arg="res://Assets/bedroom_cold.jpg" fade="2.0"]
-
-I wake up gasping. The bedroom is freezing.
-His jacket is on the chair in the corner. It's been there since the night he slammed the door.
-The ceiling is the same. The jacket is the same. I'm the one who has to change.
-
-- Put the jacket on
-    set {cold_meter} -= 10
-    I put it on. It's too big. It was always too big, like a shadow covering me completely.
-    *The smell of cigarette smoke is still ingrained in the fabric. It makes me cough.*
-- Leave it on the chair
-    set {cold_meter} += 10
-    I walk past it toward the door. I'll throw it away later. Or tomorrow.
-    But I walked past it, and that's all that matters right now.
-
-[background arg="res://Assets/outside.jpg" fade="1.0"]
-I'm out. The cold is real, but at least the air is clean. It doesn't smell like ash.
-
-# Resetting variables for the hub
-set {investigated_objects} = 0
-set {plant_checked} = false
-set {mailbox_checked} = false
-set {bike_checked} = false
-
-# ==========================================
-# PROLOGUE & THE JUMP
-# ==========================================
-
-[background arg="res://Assets/dreambg.png" fade="0.0"]
-join character1 center
-
-[voice path="res://Audio/prologue1 - 1st line.mp3" volume="0.0"]
-character1: I used to hold you when you told me about your dreams. The ones where I died.
-
-[voice path="res://Audio/prologue1 - 2nd line.mp3" volume="0.0"]
-character1: Tragic. Sudden. Always so vivid.
-
-[voice path="res://Audio/prologue1 - 3rd line.mp3" volume="0.0"]
-character1: You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
-
-[voice path="res://Audio/prologue1 - 4th line.mp3" volume="0.0"]
-character1: But your dreams became my reality. Only in mine... you're the one burning.
-
-[background arg="res://Assets/bedroom.png" fade="2.0"]
-audio "res://Audio/fire.mp3"
-
-join character1 right
-
-character1: Fire...
-character1: I have to wake you up! The air is already impossible to breathe.
-
-# TIMER 1: The Fire (5 seconds)
-[signal arg="start_timer_fire"]
-
-- Call his name
-    [signal arg="stop_timer"]
-    set {cold_meter} -= 5
-    character1: Wake up! Please, don't leave me here!
-    jump fire_continuation
-- Shake him hard
-    [signal arg="stop_timer"]
-    set {cold_meter} += 5
-    I shake him desperately.
-    character1: Come on, move! We have to get out!
-    jump fire_continuation
-
-label timeout_fire
-set {cold_meter} -= 10
-I freeze in fear, coughing as the smoke fills the room.
-character1: I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
-
-label fire_continuation
-He won't wake up. Maybe he never wanted to.
-The smoke burns my lungs. The ceiling is starting to cave in.
-
-- Try to lift him
-    set {cold_meter} -= 10
-    I try to pull him out of bed, but a violent cough stops me.
-    character1: No... I can't carry you. You're too heavy. You were always too heavy to carry.
-- Save yourself
-    set {cold_meter} += 10
-    I step back, coughing.
-    character1: You've dragged me down enough.
-    I look at him one last time.
-    character1: I'm sorry.
-
-The ceiling collapses right next to the bed. A wall of flames cuts us apart.
-
-leave character1
-
-The fire has swallowed the door. The stairs are a death trap.
-The only way out is the window. The only way is to jump.
-
-# ==========================================
-# THE COLD
-# ==========================================
 [background arg="res://Assets/blackscreen.png" fade="1.0"]
 
 [background arg="res://Assets/bedroom2.png" fade="2.0"]
