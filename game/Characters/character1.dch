@@ -19,7 +19,7 @@
 &"portraits": {
 "Neutral": {
 "export_overrides": {
-"image": "\"res://Assets/DaphneFire.png\""
+"image": "\"res://Assets/DaphneFinal.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
