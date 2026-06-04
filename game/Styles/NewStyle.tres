@@ -94,6 +94,4 @@ layer_info = {
 "16": SubResource("Resource_s4u0y"),
 "17": SubResource("Resource_kus2j")
 }
-base_overrides = {}
-layers = Array[ExtResource("2_s3on6")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "11"

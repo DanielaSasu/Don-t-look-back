@@ -17,13 +17,131 @@
 &"nicknames": [""],
 &"offset": Vector2(0, -200),
 &"portraits": {
-"Neutral": {
+"Angry": {
 "export_overrides": {
-"image": "\"res://Assets/DaphneFinal.png\""
+"image": "\"res://Assets/daphne_portraits/daphne_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 0.8,
+"scene": ""
+},
+"Annoyed": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_annoyed.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
+"scene": ""
+},
+"Content": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_content.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_neutral.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 0.8,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 0.8,
+"scene": ""
+},
+"Smiling": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_smiling.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprised": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_surprised.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 0.8,
+"scene": ""
+},
+"Upset": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_upset.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"coughing": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_coughing.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 1.0,
+"scene": ""
+},
+"covering mouth": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_coveringmouth.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 1.1,
+"scene": ""
+},
+"desperate": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_desperate.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 1.0,
+"scene": ""
+},
+"looking at ceiling": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_ceiling.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 1.0,
+"scene": ""
+},
+"scared": {
+"export_overrides": {
+"image": "\"res://Assets/daphne_portraits/daphne_scared.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, 200),
+"scale": 1.0,
 "scene": ""
 }
 },
