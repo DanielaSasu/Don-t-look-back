@@ -128,9 +128,11 @@ label outside_hub
 if {investigated_objects} >= 2:
     jump bravery_chapter
 
+[background arg="res://Assets/objects.png" fade="1.0"]
 What should I look at?
 
 - The Dead Plant | [if {plant_checked} == false]
+    [background arg="res://Assets/plant.png" fade="1.0"]
     set {plant_checked} = true
     set {investigated_objects} += 1
     He bought it saying we'd take care of something together. I kept it alive for months, until I got tired.
@@ -143,6 +145,7 @@ What should I look at?
     jump outside_hub
 
 - The Mailbox | [if {mailbox_checked} == false]
+    [background arg="res://Assets/mailbox.png" fade="1.0"]
     set {mailbox_checked} = true
     set {investigated_objects} += 1
     An unsent letter I wrote weeks before the breakup. Full of apologies for things that weren't my fault.
@@ -155,6 +158,7 @@ What should I look at?
     jump outside_hub
 
 - The Old Bicycle | [if {bike_checked} == false]
+    [background arg="res://Assets/bike.png" fade="1.0"]
     set {bike_checked} = true
     set {investigated_objects} += 1
     Still chained to the railing. Tire flat. It reminds me of the summers before the silence took over.
@@ -173,7 +177,7 @@ label bravery_chapter
 
 leave character1
 
-[background arg="res://Assets/street_cold.jpg" fade="1.0"]
+[background arg="res://Assets/blackscreen.png" fade="1.0"]
 
 join character1 left
 
@@ -182,16 +186,18 @@ Everything hurts. I think that's progress. The numbness is cracking. I'm tired, 
 I used to think discomfort meant something was wrong. Now I think it might mean something is still alive.
 character1: I don't know if this is healing. But I'm doing things again. That has to count for something.
 
+[background arg="res://Assets/street.png" fade="1.0"]
 The world feels wider here. I move further from the house than I have before.
 
 I reach a place I used to go alone.
-- Go inside
+- Stay for a second
     set {cold_meter} += 5
     It's still here. So am I.
 - Walk past
     set {cold_meter} -= 5
     I notice it, but I keep walking. I'm not ready yet.
 
+[background arg="res://Assets/sun.png" fade="2.0"]
 Suddenly, the sun breaks through the clouds. A small, unexpected warmth hits my face.
 
 # TIMER 3: Good Moment (5 seconds)
@@ -217,10 +223,12 @@ jump void_chapter
 # ==========================================
 # THE VOID
 # ==========================================
+[background arg="res://Assets/blackscreen.png" fade="2.0"]
 label void_chapter
 character1: I keep waiting for the moment it stops hurting. I think that might not be how it works. I think you just get better at carrying it.
 I thought getting better would feel like something. Mostly it just feels like nothing. I'm trying to decide if that's okay.
 
+[background arg="res://Assets/phone.png" fade="2.0"]
 My phone vibrates. An old message from him saved in the archive.
 - Delete it
     set {cold_meter} += 10
@@ -229,17 +237,21 @@ My phone vibrates. An old message from him saved in the archive.
     set {cold_meter} -= 5
     It says something kind. That's almost worse than if it said something cruel.
 - Read it and reply
+    [background arg="res://Assets/type.png" fade="2.0"]
     set {cold_meter} -= 15
     I type something. I don't send it. I type it again. I still don't send it.
 
+[background arg="res://Assets/street.png" fade="1.0"]
 label void_house_choice
 I find myself looking down the street that leads back to the house.
 
 - Keep walking forward
+    [background arg="res://Assets/downstreet.png" fade="1.0"]
     set {cold_meter} += 10
     Not today. I have somewhere to be. I don't. But I pretend I do, and somewhere along the way it becomes true.
     jump evaluate_endings
 - Turn back to the house
+    [background arg="res://Assets/return.png" fade="1.0"]
     set {cold_meter} -= 15
     I don't know why I'm going back. I think I just need to see it.
     jump the_return
@@ -248,32 +260,12 @@ I find myself looking down the street that leads back to the house.
 # THE RETURN
 # ==========================================
 label the_return
-After the void, I go back. The gate is stiff. The path is overgrown.
 Something inside me keeps trying to turn around.
 
-- Stop at the gate
-    set {cold_meter} += 5
-    I almost turn back. I don't.
-- Read the last relic
-    set {cold_meter} -= 5
-    One last thing. I hold it. I keep walking.
-- Leave it where it is
-    set {cold_meter} += 5
-    I don't need to take it with me. I know what I know.
-
+[background arg="res://Assets/closeddoor.png" fade="2.0"]
 I reach the door. I turn the handle.
 
 leave character1
-
-[background arg="res://Assets/blackscreen.png" fade="2.0"]
-
-audio "res://Audio/TheReturn_ambient.mp3"
-(Silence. Then, a low voice.)
-character1: I never told you... I had them too. The dreams.
-character1: You believed me, but I never told you. I just carried the silence around all day, like a bruise nobody could see.
-character1: Now I wake up every morning and the silence is still there. Not because you died. But because you left.
-character1: And I don't know how to explain the difference between being gone and being absent.
-character1: In the morning, I am always alone.
 
 jump evaluate_endings
 
@@ -291,14 +283,13 @@ else:
 
 # --- ENDING 1 ---
 label ending_1_intrusive_memory
-[background arg="res://Assets/outside_red_overlay.png" fade="1.0"]
+[background arg="res://Assets/bedroom.png" fade="1.0"]
 
 join character1 left
 
 She goes back inside. The cycle continues.
 The air suddenly becomes suffocating. The ground beneath my feet is burning.
-I hear his sharp voice\:
-ex: You're impossible! You're suffocating me!
+
 The fire in the dream wasn't an accident. We were the fire. We burned each other until there was nothing left.
 character1: You've been here before.
 
@@ -307,11 +298,12 @@ leave character1
 
 # --- ENDING 2 ---
 label ending_2_acceptance
-[background arg="res://Assets/outside_bright.jpg" fade="2.0"]
+[background arg="res://Assets/bench.png" fade="2.0"]
 
 join character1 left
 
 I look down near the bench in the yard. I notice something shining in the grass.
+[background arg="res://Assets/watch.png" fade="2.0"]
 I pick it up. It's my old watch. Scratched. Stopped at a time I don't recognise.
 But it's mine.
 The cold is still here, but it doesn't freeze me anymore.
@@ -321,7 +313,7 @@ leave character1
 
 # --- ENDING 3 ---
 label ending_3_the_walk
-[background arg="res://Assets/street_sunset.jpg" fade="2.0"]
+[background arg="res://Assets/downstreet.png" fade="2.0"]
 
 join character1 left
 
