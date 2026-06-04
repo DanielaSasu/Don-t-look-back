@@ -1,13 +1,16 @@
 set {cold_meter} = 0
 
-[background arg="res://Assets/DaphneSad.png" fade="0.0"]
+[background arg="res://Assets/scene 1 eyes closed.png" fade="1.0"]
 [voice path="res://Audio/prologue1 - 1st line.mp3" volume="0.0"]
 
 I used to hold you when you told me about your dreams. The ones where I died.
+[background arg="res://Assets/scene 1 eyes open.png" fade="1.0"]
 [voice path="res://Audio/prologue1 - 2nd line.mp3" volume="0.0"]
 Tragic. Sudden. Always so vivid.
+[background arg="res://Assets/scene 1 eyes closed.png" fade="1.0"]
 [voice path="res://Audio/prologue1 - 3rd line.mp3" volume="0.0"]
 You’d wake up in a panic, and I’d press your head to my chest and whisper\: "I’m not going anywhere."
+[background arg="res://Assets/scene 1 eyes open.png" fade="1.0"]
 [voice path="res://Audio/prologue1 - 4th line.mp3" volume="0.0"]
 But your dreams became my reality. Only in mine... you're the one burning.
 
@@ -15,10 +18,10 @@ But your dreams became my reality. Only in mine... you're the one burning.
 [background arg="res://Assets/bedroom_fire.png" fade="2.0"]
 
 audio "res://Audio/fire.mp3"
-join character1 left
+join character1 (Sad) left
 
-character1: Fire...
-character1: I have to wake you up! The air is already impossible to breathe.
+character1 (Surprised): Fire...
+character1 (covering mouth): I have to wake you up! The air is already impossible to breathe.
 
 [signal arg="start_fire_timer"]
 
@@ -26,18 +29,18 @@ character1: I have to wake you up! The air is already impossible to breathe.
     # Tells the Godot engine to stop the timer because the player clicked
     [signal arg="stop_timer"]
     set {cold_meter} -= 5
-    character1: Wake up! Please, don't leave me here!
+    character1 (Surprised): Wake up! Please, don't leave me here!
     jump continuation_scene_1
 - Shake him hard
     [signal arg="stop_timer"]
     set {cold_meter} += 5
-    character1: *Shaking him desperately* Come on, move! We have to get out!
+    character1 (desperate): *Shaking him desperately* Come on, move! We have to get out!
     jump continuation_scene_1
 
 label panic_paralysis
 # Godot forcefully jumps the player here if the 5 seconds run out
 set {cold_meter} -= 15
-character1: *Frozen in fear, coughing* I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
+character1 (coughing): *Frozen in fear, coughing* I... I can't move. The smoke is too thick. I'm wasting time just staring at him!
 
 label continuation_scene_1
 He won't wake up. Maybe he never wanted to.
@@ -45,12 +48,12 @@ The smoke burns my lungs. The ceiling is starting to cave in.
 
 - Try to lift him (You can't leave him)
     set {cold_meter} -= 10
-    character1: *Coughing violently* No... I can't carry you. You're too heavy. You were always too heavy to carry.
+    character1 (looking at ceiling): *Coughing violently* No... I can't carry you. You're too heavy. You were always too heavy to carry.
 - Save yourself (Leave him behind)
     set {cold_meter} += 15
-    character1: *Coughing* You've dragged me down enough.
+    character1 (desperate): *Coughing* You've dragged me down enough.
     I look at him one last time.
-    character1: I'm sorry.
+    character1 (Sad): I'm sorry.
 
 The ceiling collapses right next to the bed. A wall of flames cuts us apart.
 leave character1
