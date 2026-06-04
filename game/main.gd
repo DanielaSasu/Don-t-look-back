@@ -46,7 +46,7 @@ func _on_timer_timeout() -> void:
 	
 	match current_context:
 		"fire":
-			random_label = "timeout_fire" 
+			random_label = "panic_paralysis" 
 		"jacket":
 			var variante = ["choice_jacket_on", "choice_jacket_leave"]
 			random_label = variante.pick_random()

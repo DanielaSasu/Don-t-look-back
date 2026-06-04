@@ -26,7 +26,7 @@ join character1 (Sad) left
 character1 (Surprised): Fire...
 character1 (covering mouth): I have to wake you up! The air is already impossible to breathe.
 
-[signal arg="start_fire_timer"]
+[signal arg="start_timer_fire"]
 
 - Call his name
     # Tells the Godot engine to stop the timer because the player clicked
