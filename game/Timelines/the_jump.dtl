@@ -51,7 +51,7 @@ The smoke burns my lungs. The ceiling is starting to cave in.
 
 - Try to lift him (You can't leave him)
     set {cold_meter} -= 10
-    character1 (looking at ceiling): Coughing violently No... I can't carry you. You're too heavy. You were always too heavy to carry.
+    character1 (coughing): Coughing violently No... I can't carry you. You're too heavy. You were always too heavy to carry.
 - Save yourself (Leave him behind)
     set {cold_meter} += 15
     character1 (desperate): Coughing You've dragged me down enough.
@@ -66,7 +66,7 @@ The only way out is the window. The only way is to jump.
 [background arg="res://Assets/blackscreen.png" fade="1.0"]
 
 [background arg="res://Assets/bedroom2.png" fade="2.0"]
-join character1 center
+join character1 (scared) center
 
 I wake up gasping. The bedroom is freezing.
 
@@ -87,7 +87,7 @@ The ceiling is the same. The jacket is the same. I'm the one who has to change.
 label choice_jacket_on
 set {cold_meter} -= 5
 [background arg="res://Assets/nojacket.png" fade="2.0"]
-I put it on. It's too big. Always too big.
+character1 (neutral_jacket): I put it on. It's too big. Always too big.
 The smell of cigarette smoke is still in the fabric. It makes me cough.
 jump outside_transition
 
