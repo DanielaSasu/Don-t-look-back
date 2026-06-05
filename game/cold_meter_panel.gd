@@ -43,10 +43,10 @@ var messages = {
 
 func _ready() -> void:
 	fill_style = StyleBoxFlat.new()
-	fill_style.corner_radius_top_left = 4
-	fill_style.corner_radius_top_right = 4
-	fill_style.corner_radius_bottom_left = 4
-	fill_style.corner_radius_bottom_right = 4
+	fill_style.corner_radius_top_left = 0
+	fill_style.corner_radius_top_right = 0
+	fill_style.corner_radius_bottom_left = 0
+	fill_style.corner_radius_bottom_right = 0
 	meter_bar.add_theme_stylebox_override("fill", fill_style)
 	
 	toggle_button.pressed.connect(_on_toggle_button_pressed)
