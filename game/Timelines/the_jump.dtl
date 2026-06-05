@@ -106,12 +106,14 @@ leave character1
 
 join character1 left
 
+audio "res://Audio/ruins.mp3"
 I'm out. The cold is real, but at least the air is clean. It doesn't smell like ash.
 
 label outside_hub
 if {investigated_objects} >= 2:
     jump bravery_chapter
 
+audio "res://Audio/shadows.mp3"
 [background arg="res://Assets/objects.png" fade="1.0"]
 What should I look at?
 
@@ -165,6 +167,7 @@ leave character1
 
 join character1 left
 
+audio "res://Audio/after.mp3"
 Everything hurts. I think that's progress. The numbness is cracking. I'm tired, cold, and for the first time since the jump, fully present.
 
 I used to think discomfort meant something was wrong. Now I think it might mean something is still alive.
@@ -278,6 +281,7 @@ The fire in the dream wasn't an accident. We were the fire. We burned each other
 character1: You've been here before.
 
 leave character1
+[background arg="res://Assets/ending1.png" fade="1.0"]
 [end_timeline]
 
 # --- ENDING 2 ---
@@ -293,6 +297,7 @@ But it's mine.
 The cold is still here, but it doesn't freeze me anymore.
 
 leave character1
+[background arg="res://Assets/ending2.png" fade="1.0"]
 [end_timeline]
 
 # --- ENDING 3 ---
@@ -305,5 +310,6 @@ She doesn't go back into the house. She keeps walking.
 The street stretches out in front of me.
 character1: I don't know where I'm going. That's the first time that's felt okay.
 
+[background arg="res://Assets/ending3.png" fade="1.0"]
 leave character1
 [end_timeline]
