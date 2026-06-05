@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkgi0oyvrtwee"]
+[gd_scene format=3 uid="uid://bkgi0oyvrtwee"]
 
 [ext_resource type="Script" uid="uid://c3qv6gpm7s3ed" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="StyleBox" uid="uid://c760e5ewy2ngr" path="res://Styles/box_texture.tres" id="2_7mycd"]
@@ -20,13 +20,13 @@ shader_parameter/hot_color = Color(1, 0, 0.5, 1)
 shader_parameter/cold_color = Color(0, 0.2, 1, 1)
 shader_parameter/vignette_intensity = 0.6
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=194721619]
 script = ExtResource("1_ig7tw")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247148934]
 layer = 10
 
-[node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer"]
+[node name="ColdMeterPanel" type="PanelContainer" parent="CanvasLayer" unique_id=763139205]
 custom_minimum_size = Vector2(16, 16)
 offset_left = 16.0
 offset_top = 16.0
@@ -35,47 +35,47 @@ offset_bottom = 125.0
 theme_override_styles/panel = ExtResource("2_7mycd")
 script = ExtResource("2_lquwl")
 
-[node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel"]
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ColdMeterPanel" unique_id=952899703]
 layout_mode = 2
 
-[node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin"]
+[node name="MainColumn" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin" unique_id=160497427]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=1763075268]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1164863174]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_272bh")
 theme_override_font_sizes/font_size = 20
-text = "Cold meter"
+text = "Holding on"
 
-[node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="Spacer" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=319024847]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="CollapsedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1076060888]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_kek77")
 text = "Level: 0°"
 
-[node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow"]
+[node name="ToggleButton" type="Button" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/TopRow" unique_id=1365849195]
 unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("5_5vw27")
 
-[node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn"]
+[node name="ExpandedContent" type="VBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn" unique_id=1484299305]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="DetailsRow" type="HBoxContainer" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=1342184545]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="ExpandedLevel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1978605327]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.8)
@@ -83,25 +83,25 @@ theme_override_fonts/font = ExtResource("5_kek77")
 theme_override_font_sizes/font_size = 18
 text = "Level: 0°"
 
-[node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="ChangeLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=321099398]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_kek77")
 theme_override_font_sizes/font_size = 18
 text = "+0°"
 
-[node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="Spacer2" type="Control" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=1616539838]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow"]
+[node name="LimitLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent/DetailsRow" unique_id=359710842]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 0.8)
 theme_override_fonts/font = ExtResource("5_kek77")
 theme_override_font_sizes/font_size = 18
-text = "Limit: 100°"
+text = "Limit: +50°"
 
-[node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="MeterBar" type="ProgressBar" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=2135397244]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
@@ -109,7 +109,7 @@ theme_override_styles/background = ExtResource("7_efxa6")
 theme_override_styles/fill = ExtResource("8_dg77c")
 show_percentage = false
 
-[node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent"]
+[node name="MessageLabel" type="Label" parent="CanvasLayer/ColdMeterPanel/Margin/MainColumn/ExpandedContent" unique_id=1264996815]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
@@ -117,7 +117,7 @@ theme_override_colors/font_color = Color(0.937255, 0.937255, 0.937255, 0.8)
 theme_override_fonts/font = ExtResource("5_kek77")
 autowrap_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1726305230]
 visible = false
 material = SubResource("ShaderMaterial_lquwl")
 anchors_preset = 15
@@ -127,7 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColdMeterUI" type="ProgressBar" parent="CanvasLayer"]
+[node name="ColdMeterUI" type="ProgressBar" parent="CanvasLayer" unique_id=1724332176]
 visible = false
 offset_left = 43.0
 offset_top = 224.0
@@ -137,7 +137,7 @@ mouse_filter = 2
 value = 50.0
 script = ExtResource("4_1bvp3")
 
-[node name="TimerBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="TimerBar" type="ProgressBar" parent="CanvasLayer" unique_id=2033119262]
 unique_name_in_owner = true
 anchors_preset = 3
 anchor_left = 1.0
@@ -156,7 +156,7 @@ theme_override_styles/background = ExtResource("11_ycdy4")
 theme_override_styles/fill = ExtResource("12_w48qg")
 show_percentage = false
 
-[node name="DialogManager" type="Node2D" parent="."]
+[node name="DialogManager" type="Node2D" parent="." unique_id=1956595669]
 
-[node name="ChoiceTimer" type="Timer" parent="DialogManager"]
+[node name="ChoiceTimer" type="Timer" parent="DialogManager" unique_id=495911152]
 one_shot = true

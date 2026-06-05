@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Dialogic.has_subsystem("VAR"):
 		var current_cold_meter = Dialogic.VAR.get("cold_meter")
-		
+		print("+++++++++++++++++",current_cold_meter)
 		if current_cold_meter != null:
 			self.value = float(current_cold_meter)
 			
